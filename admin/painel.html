@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Painel — Administração Dona Cida</title>
+    <link rel="icon" type="image/png" href="../img/icone-tudo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Gelasio:wght@400;600&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="tema-pessego">
+    <main class="pagina">
+      <div class="painel-topo">
+        <header class="titulo-caixa">
+          <h1>Restaurante Dona Cida</h1>
+        </header>
+        <button type="button" class="usuario-atalho" id="btn-usuario" aria-label="Meus dados">
+          <span class="circulo"><span data-icone="usuario"></span></span>
+          <span class="nome" id="usuario-nome">Usuário</span>
+        </button>
+      </div>
+
+      <section class="painel painel-principal" aria-label="Atalhos do painel">
+        <div class="carrossel">
+          <button type="button" class="btn-seta" id="carrossel-anterior" aria-label="Prato anterior">
+            <span data-icone="seta-esquerda"></span>
+          </button>
+          <div class="carrossel-centro">
+            <div class="carrossel-quadro" id="carrossel-quadro"></div>
+            <p class="carrossel-legenda" id="carrossel-legenda" aria-live="polite">Carregando…</p>
+          </div>
+          <button type="button" class="btn-seta" id="carrossel-proximo" aria-label="Próximo prato">
+            <span data-icone="seta-direita"></span>
+          </button>
+        </div>
+
+        <nav class="menu-admin" aria-label="Atalhos">
+          <a class="pill pill-rosa" href="cardapio.html">
+            <img class="pill-icone" src="../img/icone-cardapio.png" alt="" />
+            <span class="pill-texto">Editar Cardápio</span>
+          </a>
+          <a class="pill pill-ambar" href="avaliacoes.html">
+            <img class="pill-icone com-borda" src="../img/icone-avaliacoes.png" alt="" />
+            <span class="pill-texto">Exibir Avaliações</span>
+          </a>
+          <a class="pill pill-laranja" id="link-site" href="../index.html" target="_blank">
+            <img class="pill-icone com-borda" src="../img/icone-loja.png" alt="" />
+            <span class="pill-texto">Site Principal</span>
+          </a>
+        </nav>
+      </section>
+    </main>
+
+    <script type="module" src="js/painel.js"></script>
+  </body>
+</html>

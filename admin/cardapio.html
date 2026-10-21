@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Cardápio — Administração Dona Cida</title>
+    <link rel="icon" type="image/png" href="../img/icone-tudo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Gelasio:wght@400;600&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="tema-claro">
+    <main class="pagina">
+      <header class="topo-pagina">
+        <a class="btn-seta" href="painel.html" aria-label="Voltar ao painel"><span data-icone="seta-esquerda"></span></a>
+        <h1>Cardápio</h1>
+      </header>
+
+      <nav class="grupo-pills" id="abas" aria-label="Categorias do cardápio"></nav>
+
+      <section class="painel lista-painel" id="lista" aria-live="polite"></section>
+    </main>
+
+    <button type="button" class="btn btn-redondo botao-flutuante" id="btn-novo" aria-label="Cadastrar novo prato" title="Novo prato">
+      <span data-icone="mais"></span>
+    </button>
+
+    <script type="module" src="js/cardapio.js"></script>
+  </body>
+</html>

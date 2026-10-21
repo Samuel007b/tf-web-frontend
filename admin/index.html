@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Entrar — Administração Dona Cida</title>
+    <link rel="icon" type="image/png" href="../img/icone-tudo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Gelasio:wght@400;600&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="tema-pessego">
+    <main class="login-pagina">
+      <section class="login-cartao" aria-labelledby="titulo-login">
+        <h1 id="titulo-login">Restaurante Dona Cida</h1>
+        <p class="aviso">Área administrativa</p>
+        <form novalidate>
+          <div class="campo">
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario" name="usuario" autocomplete="username" required />
+          </div>
+          <div class="campo">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" autocomplete="current-password" required />
+          </div>
+          <p id="erro" class="erro" role="alert"></p>
+          <button type="submit" class="btn"><a href="painel.html">Entrar</a></button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>
