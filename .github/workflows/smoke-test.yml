@@ -1,0 +1,12 @@
+name: Smoke Test
+
+on: [push]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verifica se as páginas HTML existem
+        run:
+          test -f index.html && test -f historia.html && test -f cardapio.html && test -f avaliacoes.html && test -f contato.html && test -f admin/index.html && test -f admin/painel.html && test -f admin/cardapio.html && test -f admin/avaliacoes.html && echo "páginas ok"
