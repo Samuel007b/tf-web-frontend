@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Restaurante Dona Cida, em Fruta de Leite (MG): comida mineira feita no fogão a lenha. Veja o cardápio e faça seu pedido." />
+    <title>Restaurante Dona Cida</title>
+    <link rel="icon" type="image/png" href="img/icone-tudo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Gelasio:wght@400;600&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="tema-pessego">
+    <main class="pagina">
+      <nav class="grupo-pills nav-topo" aria-label="Menu principal">
+        <a class="pill pill-laranja" href="cardapio.html">
+          <img class="pill-icone" src="img/icone-cardapio.png" alt="" />
+          <span class="pill-texto">Cardápio</span>
+        </a>
+        <a class="pill pill-rosa" href="historia.html">
+          <img class="pill-icone" src="img/icone-historia.png" alt="" />
+          <span class="pill-texto">Nossa História</span>
+        </a>
+        <a class="pill pill-ambar" href="avaliacoes.html">
+          <img class="pill-icone com-borda" src="img/icone-avaliacoes.png" alt="" />
+          <span class="pill-texto">Avaliações</span>
+        </a>
+        <a class="pill pill-whats" href="contato.html">
+          <img class="pill-icone com-borda" src="img/icone-whatsapp.png" alt="" />
+          <span class="pill-texto">Contate-nos</span>
+        </a>
+        <a class="pill pill-whats" href="admin/index.html">
+          <img class="pill-icone com-borda" src="img/icone-admin.png" alt="" />
+          <span class="pill-texto">Administrativo</span>
+        </a>
+      </nav>
+
+      <header class="titulo-caixa home-titulo">
+        <h1>Restaurante Dona Cida</h1>
+      </header>
+
+      <section class="painel home-painel" aria-label="Pratos em destaque">
+        <div class="carrossel">
+          <button type="button" class="btn-seta" id="carrossel-anterior" aria-label="Prato anterior">
+            <span data-icone="seta-esquerda"></span>
+          </button>
+          <div class="carrossel-centro">
+            <div class="carrossel-quadro" id="carrossel-quadro"></div>
+            <p class="carrossel-legenda" id="carrossel-legenda" aria-live="polite">Carregando…</p>
+          </div>
+          <button type="button" class="btn-seta" id="carrossel-proximo" aria-label="Próximo prato">
+            <span data-icone="seta-direita"></span>
+          </button>
+        </div>
+
+        <div class="home-texto">
+          <p>
+            Nosso cardápio é reconhecido em toda cidade pela sua diversidade e sua qualidade, sempre prezando pela
+            satisfação do cliente, venha fazer o seu pedido.
+          </p>
+          <a class="btn" href="cardapio.html">Confira <img src="img/icone-dedo.png" alt="" width="28" height="28" /></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>&copy; 2026 Restaurante Dona Cida · Fruta de Leite, MG</p>
+      <p>&copy; Desenvolvido por: Athos Silvano, Lucas Inácio, Ryanderson Henzyo, Samuel Miranda & Sara Augusta</p>
+    </footer>
+
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
