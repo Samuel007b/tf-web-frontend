@@ -14,57 +14,33 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="tema-pessego">
+  <body class="tema-verde">
     <main class="pagina">
-    <nav class="grupo-pills nav-topo" aria-label="Menu principal">
-      <a class="pill pill-laranja" href="cardapio.html">
-        <img class="pill-icone" src="img/icone-cardapio.png" alt="" />
-        <span class="pill-texto">Cardápio</span>
-      </a>
-      <a class="pill pill-rosa" href="historia.html">
-        <img class="pill-icone" src="img/icone-historia.png" alt="" />
-        <span class="pill-texto">Nossa História</span>
-      </a>
-      <a class="pill pill-ambar" href="avaliacoes.html">
-        <img class="pill-icone com-borda" src="img/icone-avaliacoes.png" alt="" />
-        <span class="pill-texto">Avaliações</span>
-      </a>
-      <a class="pill pill-whats" href="contato.html" aria-current="page">
-        <img class="pill-icone com-borda" src="img/icone-whatsapp.png" alt="" />
-        <span class="pill-texto">Contate-nos</span>
-      </a>
-      <a class="pill pill-whats" href="admin/index.html">
-        <img class="pill-icone com-borda" src="img/icone-admin.png" alt="" />
-        <span class="pill-texto">Administrativo</span>
-      </a>
-    </nav>
-
-      <header class="titulo-caixa">
-        <h1>Contate-nos</h1>
+      <header class="titulo-caixa ">
+        <a class="logo-link" href="index.html" aria-label="Voltar ao início">
+          <img src="img/seta.gif" alt="Seta de Retorno Personalizada" width="56" height="61" />
+        </a>
+        <h1>Contato</h1>
       </header>
 
-      <section class="painel" aria-label="Contato">
-        <h2>Fale com a gente</h2>
-        <ul class="lista-contato">
-          <li><strong>Endereço:</strong> Fruta de Leite, MG <!-- TODO: rua e número --></li>
-          <li><strong>Horário:</strong> <!-- TODO: dias e horários --></li>
-          <li>
-            <strong>WhatsApp:</strong>
-            <!-- TODO: trocar 5538999999999 pelo número real (55 + DDD + número) -->
-            <a href="https://wa.me/5538999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-          </li>
-        </ul>
+      <div class="grupo-pills contato-links">
+        <a class="pill pill-whats" id="link-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+          <img class="pill-icone com-borda" src="img/icone-whatsapp.png" alt="" />
+          <span class="pill-texto">Faça seu pedido</span>
+        </a>
+        <a class="pill pill-rosa" id="link-instagram" href="#" target="_blank" rel="noopener noreferrer">
+          <img class="pill-icone com-borda" src="img/icone-instagram.svg" alt="" />
+          <span class="pill-texto">Instagram</span>
+        </a>
+      </div>
 
-        <h2>Envie uma mensagem</h2>
-        <form class="formulario" id="form-contato">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required />
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-          <button type="submit" class="btn">Enviar pelo WhatsApp</button>
-        </form>
+      <section class="pagina-instagram" aria-labelledby="titulo-pagina">
+        <h2 id="titulo-pagina">
+          <img src="img/rabisco.png" alt="" />
+          Conheça nossa página
+          <img class="espelho" src="img/rabisco.png" alt="" />
+        </h2>
+        <div class="posts" id="posts"></div>
       </section>
     </main>
 
@@ -72,13 +48,7 @@
       <p>&copy; 2026 Restaurante Dona Cida · Fruta de Leite, MG</p>
       <p>&copy; Desenvolvido por: Athos Silvano, Lucas Inácio, Ryanderson Henzyo, Samuel Miranda &amp; Sara Augusta</p>
     </footer>
-    <script>
-      document.getElementById("form-contato").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const f = e.target;
-        const texto = encodeURIComponent("Olá, sou " + f.nome.value + ". " + f.mensagem.value);
-        window.open("https://wa.me/5538999999999?text=" + texto, "_blank", "noopener");
-      });
-    </script>
+
+    <script type="module" src="js/contato.js"></script>
   </body>
 </html>
