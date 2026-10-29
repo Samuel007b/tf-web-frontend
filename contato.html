@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contato e WhatsApp do Restaurante Dona Cida, em Fruta de Leite (MG)." />
+    <title>Contato | Restaurante Dona Cida</title>
+    <link rel="icon" type="image/png" href="img/icone-tudo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Gelasio:wght@400;600&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="tema-pessego">
+    <main class="pagina">
+    <nav class="grupo-pills nav-topo" aria-label="Menu principal">
+      <a class="pill pill-laranja" href="cardapio.html">
+        <img class="pill-icone" src="img/icone-cardapio.png" alt="" />
+        <span class="pill-texto">Cardápio</span>
+      </a>
+      <a class="pill pill-rosa" href="historia.html">
+        <img class="pill-icone" src="img/icone-historia.png" alt="" />
+        <span class="pill-texto">Nossa História</span>
+      </a>
+      <a class="pill pill-ambar" href="avaliacoes.html">
+        <img class="pill-icone com-borda" src="img/icone-avaliacoes.png" alt="" />
+        <span class="pill-texto">Avaliações</span>
+      </a>
+      <a class="pill pill-whats" href="contato.html" aria-current="page">
+        <img class="pill-icone com-borda" src="img/icone-whatsapp.png" alt="" />
+        <span class="pill-texto">Contate-nos</span>
+      </a>
+      <a class="pill pill-whats" href="admin/index.html">
+        <img class="pill-icone com-borda" src="img/icone-admin.png" alt="" />
+        <span class="pill-texto">Administrativo</span>
+      </a>
+    </nav>
+
+      <header class="titulo-caixa">
+        <h1>Contate-nos</h1>
+      </header>
+
+      <section class="painel" aria-label="Contato">
+        <h2>Fale com a gente</h2>
+        <ul class="lista-contato">
+          <li><strong>Endereço:</strong> Fruta de Leite, MG <!-- TODO: rua e número --></li>
+          <li><strong>Horário:</strong> <!-- TODO: dias e horários --></li>
+          <li>
+            <strong>WhatsApp:</strong>
+            <!-- TODO: trocar 5538999999999 pelo número real (55 + DDD + número) -->
+            <a href="https://wa.me/5538999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </li>
+        </ul>
+
+        <h2>Envie uma mensagem</h2>
+        <form class="formulario" id="form-contato">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required />
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+          <button type="submit" class="btn">Enviar pelo WhatsApp</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>&copy; 2026 Restaurante Dona Cida · Fruta de Leite, MG</p>
+      <p>&copy; Desenvolvido por: Athos Silvano, Lucas Inácio, Ryanderson Henzyo, Samuel Miranda &amp; Sara Augusta</p>
+    </footer>
+    <script>
+      document.getElementById("form-contato").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const texto = encodeURIComponent("Olá, sou " + f.nome.value + ". " + f.mensagem.value);
+        window.open("https://wa.me/5538999999999?text=" + texto, "_blank", "noopener");
+      });
+    </script>
+  </body>
+</html>

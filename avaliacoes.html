@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Veja o que os clientes dizem sobre o Restaurante Dona Cida." />
+    <title>Avaliações | Restaurante Dona Cida</title>
+    <link rel="icon" type="image/png" href="img/icone-tudo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Gelasio:wght@400;600&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="tema-pessego">
+    <main class="pagina">
+    <nav class="grupo-pills nav-topo" aria-label="Menu principal">
+      <a class="pill pill-laranja" href="cardapio.html">
+        <img class="pill-icone" src="img/icone-cardapio.png" alt="" />
+        <span class="pill-texto">Cardápio</span>
+      </a>
+      <a class="pill pill-rosa" href="historia.html">
+        <img class="pill-icone" src="img/icone-historia.png" alt="" />
+        <span class="pill-texto">Nossa História</span>
+      </a>
+      <a class="pill pill-ambar" href="avaliacoes.html" aria-current="page">
+        <img class="pill-icone com-borda" src="img/icone-avaliacoes.png" alt="" />
+        <span class="pill-texto">Avaliações</span>
+      </a>
+      <a class="pill pill-whats" href="contato.html">
+        <img class="pill-icone com-borda" src="img/icone-whatsapp.png" alt="" />
+        <span class="pill-texto">Contate-nos</span>
+      </a>
+      <a class="pill pill-whats" href="admin/index.html">
+        <img class="pill-icone com-borda" src="img/icone-admin.png" alt="" />
+        <span class="pill-texto">Administrativo</span>
+      </a>
+    </nav>
+
+      <header class="titulo-caixa">
+        <h1>Avaliações</h1>
+      </header>
+
+      <section class="painel" aria-label="Avaliações dos clientes">
+        <h2>O que dizem sobre a gente</h2>
+        <!-- Exemplos: substituir por avaliações reais ou carregar da API -->
+        <ul class="lista-avaliacoes" id="lista-avaliacoes">
+          <li class="avaliacao">
+            <strong>Maria S.</strong> <span aria-label="5 de 5 estrelas">★★★★★</span>
+            <p>Comida maravilhosa, tempero de casa!</p>
+          </li>
+          <li class="avaliacao">
+            <strong>João P.</strong> <span aria-label="4 de 5 estrelas">★★★★☆</span>
+            <p>Feijão tropeiro muito bom e atendimento rápido.</p>
+          </li>
+        </ul>
+
+        <h2>Deixe sua avaliação</h2>
+        <form class="formulario" id="form-avaliacao">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required maxlength="60" />
+
+          <label for="nota">Nota</label>
+          <select id="nota" name="nota" required>
+            <option value="5">5 - Excelente</option>
+            <option value="4">4 - Muito bom</option>
+            <option value="3">3 - Bom</option>
+            <option value="2">2 - Regular</option>
+            <option value="1">1 - Ruim</option>
+          </select>
+
+          <label for="comentario">Comentário</label>
+          <textarea id="comentario" name="comentario" rows="4" required maxlength="300"></textarea>
+
+          <button type="submit" class="btn">Enviar avaliação</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>&copy; 2026 Restaurante Dona Cida · Fruta de Leite, MG</p>
+      <p>&copy; Desenvolvido por: Athos Silvano, Lucas Inácio, Ryanderson Henzyo, Samuel Miranda &amp; Sara Augusta</p>
+    </footer>
+    <script>
+      const form = document.getElementById("form-avaliacao");
+      const lista = document.getElementById("lista-avaliacoes");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nota = Number(form.nota.value);
+        const li = document.createElement("li");
+        li.className = "avaliacao";
+        const nome = document.createElement("strong");
+        nome.textContent = form.nome.value;
+        const est = document.createElement("span");
+        est.textContent = " " + "★".repeat(nota) + "☆".repeat(5 - nota);
+        const txt = document.createElement("p");
+        txt.textContent = form.comentario.value;
+        li.append(nome, est, txt);
+        lista.prepend(li);
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
