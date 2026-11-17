@@ -13,6 +13,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      UPLOADCARE_PUBLIC_KEY = '0a2348c5eed7dce54a0a';
+    </script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
   </head>
   <body class="tema-claro">
     <main class="pagina">
@@ -25,62 +29,16 @@
         <p class="subtitulo">Conheça a diversidade dos nossos pratos!</p>
       </header>
 
-      <section class="painel" aria-label="Cardápio">
-      <div class="cardapio-secao">
-        <h2>Pratos principais</h2>
-        <article class="prato">
-          <h3>Frango com quiabo</h3>
-          <p>Frango caipira refogado com quiabo, feito no fogão a lenha.</p>
-        </article>
-        <article class="prato">
-          <h3>Costelinha com mandioca</h3>
-          <p>Costelinha suína bem cozida, acompanhada de mandioca.</p>
-        </article>
-        <article class="prato">
-          <h3>Tutu de feijão</h3>
-          <p>Feijão cremoso com farinha, servido com couve e torresmo.</p>
-        </article>
-      </div>
-      <div class="cardapio-secao">
-        <h2>Acompanhamentos</h2>
-        <article class="prato">
-          <h3>Arroz, feijão e couve</h3>
-          <p>O básico mineiro, sempre fresquinho.</p>
-        </article>
-        <article class="prato">
-          <h3>Feijão tropeiro</h3>
-          <p>Feijão, farinha, linguiça, ovo e cebolinha.</p>
-        </article>
-        <article class="prato">
-          <h3>Mandioca frita</h3>
-          <p>Crocante por fora e macia por dentro.</p>
-        </article>
-      </div>
-      <div class="cardapio-secao">
-        <h2>Sobremesas</h2>
-        <article class="prato">
-          <h3>Doce de leite caseiro</h3>
-          <p>Cozido devagar, em tacho.</p>
-        </article>
-        <article class="prato">
-          <h3>Pudim de leite</h3>
-          <p>Cremoso, com calda de caramelo.</p>
-        </article>
-        <article class="prato">
-          <h3>Queijo com goiabada</h3>
-          <p>A famosa dupla mineira.</p>
-        </article>
-      </div>
-      <div class="home-texto">
-        <p>Quer fazer o seu pedido? Fale com a gente pelo WhatsApp.</p>
-        <a class="btn" href="contato.html">Pedir agora</a>
-      </div>
-      </section>
+      <nav class="grupo-pills cardapio-abas" id="abas" aria-label="Categorias do cardápio"></nav>
+
+      <section class="grade-pratos" id="grade-pratos" aria-live="polite"></section>
     </main>
 
     <footer class="rodape">
       <p>&copy; 2026 Restaurante Dona Cida · Fruta de Leite, MG</p>
       <p>&copy; Desenvolvido por: Athos Silvano, Lucas Inácio, Ryanderson Henzyo, Samuel Miranda &amp; Sara Augusta</p>
     </footer>
+
+    <script type="module" src="js/cardapio.js"></script>
   </body>
 </html>

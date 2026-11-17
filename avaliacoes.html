@@ -13,6 +13,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      UPLOADCARE_PUBLIC_KEY = '0a2348c5eed7dce54a0a';
+    </script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
   </head>
   <body class="tema-verde">
     <main class="pagina">
@@ -24,41 +28,15 @@
         <h1>Avaliações</h1>
       </header>
 
-      <section class="painel" aria-label="Avaliações dos clientes">
-        <h2>O que dizem sobre a gente</h2>
-        <!-- Exemplos: substituir por avaliações reais ou carregar da API -->
-        <ul class="lista-avaliacoes" id="lista-avaliacoes">
-          <li class="avaliacao">
-            <strong>Maria S.</strong> <span aria-label="5 de 5 estrelas">★★★★★</span>
-            <p>Comida maravilhosa, tempero de casa!</p>
-          </li>
-          <li class="avaliacao">
-            <strong>João P.</strong> <span aria-label="4 de 5 estrelas">★★★★☆</span>
-            <p>Feijão tropeiro muito bom e atendimento rápido.</p>
-          </li>
-        </ul>
+      <nav class="grupo-pills avaliacoes-filtros" id="filtros" aria-label="Filtrar avaliações"></nav>
+      <div class="filtro-estrelas" id="filtro-estrelas" hidden></div>
 
-        <h2>Deixe sua avaliação</h2>
-        <form class="formulario" id="form-avaliacao">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required maxlength="60" />
-
-          <label for="nota">Nota</label>
-          <select id="nota" name="nota" required>
-            <option value="5">5 - Excelente</option>
-            <option value="4">4 - Muito bom</option>
-            <option value="3">3 - Bom</option>
-            <option value="2">2 - Regular</option>
-            <option value="1">1 - Ruim</option>
-          </select>
-
-          <label for="comentario">Comentário</label>
-          <textarea id="comentario" name="comentario" rows="4" required maxlength="300"></textarea>
-
-          <button type="submit" class="btn">Enviar avaliação</button>
-        </form>
-      </section>
+      <section class="lista-avaliacoes" id="lista-avaliacoes" aria-live="polite"></section>
     </main>
+
+    <button type="button" class="btn btn-redondo botao-flutuante" id="btn-avaliar" aria-label="Escrever uma avaliação" title="Escrever uma avaliação">
+      <span data-icone="mais"></span>
+    </button>
 
     <footer class="rodape">
       <p>&copy; 2026 Restaurante Dona Cida · Fruta de Leite, MG</p>
