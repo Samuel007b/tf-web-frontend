@@ -195,6 +195,11 @@ export function criarModal({ titulo = '', estreito = false } = {}) {
   const cabecalho = el('h2', { class: 'modal-titulo', id: idTitulo, texto: titulo });
   dialog.append(el('div', { class: 'modal-corpo' }, botaoFechar, cabecalho, conteudo));
 
+  // Esc enquanto o painel do Uploadcare está aberto fecha só o painel, não a janela por baixo
+  dialog.addEventListener('cancel', (evento) => {
+    if (document.querySelector('.uploadcare--dialog')) evento.preventDefault();
+  });
+
   // clique no fundo escuro fecha a janela
   dialog.addEventListener('click', (evento) => {
     if (evento.target === dialog) dialog.close();
@@ -247,12 +252,28 @@ export function confirmar({ titulo = 'Tem certeza?', mensagem = '', rotulo = 'Co
   });
 }
 
-// ===== upload (Uploadcare via CDN, como no projeto do professor) =====
+// ===== upload (Uploadcare via CDN) =====
+// O <dialog> aberto com showModal() fica na "camada superior" (top layer) do navegador, acima de qualquer z-index.
+let vigiandoUploadcare = false;
+function manterUploadcareVisivel() {
+  if (vigiandoUploadcare) return;
+  vigiandoUploadcare = true;
+  new MutationObserver((registros) => {
+    for (const registro of registros) {
+      for (const no of registro.addedNodes) {
+        if (!(no instanceof HTMLElement) || !no.classList.contains('uploadcare--dialog')) continue;
+        const janela = [...document.querySelectorAll('dialog[open]')].pop();
+        if (janela) janela.appendChild(no);
+      }
+    }
+  }).observe(document.body, { childList: true });
+}
 // Se o script do Uploadcare não carregar, o upload simplesmente fica indisponível.
 export function criarUploader(input, { soImagens = false } = {}) {
   if (typeof uploadcare === 'undefined') {
     return { disponivel: false, async obterUrl() { return null; }, limpar() {} };
   }
+  manterUploadcareVisivel();
   input.dataset.clearable = 'true';
   input.dataset.locale = 'pt';
   if (soImagens) input.dataset.imagesOnly = 'true';
