@@ -192,6 +192,7 @@ h1, h2, h3, p { margin-top: 0; }
 .pill-rosa { --cor: var(--rosa); }
 .pill-ambar { --cor: var(--ambar); }
 .pill-verde { --cor: var(--verde); }
+.pill-pessego { --cor: var(--pessego); }
 .pill-marrom { --cor: var(--marrom-midia); color: #fff; }
 .pill-whats { --cor: var(--whats); }
 
